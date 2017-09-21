@@ -108,8 +108,8 @@ public class Agent {
  
             @Override 
             public float estimate(TileNode n, TileNode n1) { 
-                return 0; //Exercício 1
-
+                //return 0; //Exercício 1
+                return n.getPosition().dst(n1.getPosition()); //Exercício 2
 //                throw new UnsupportedOperationException("Deveria ter retornado "
 //                        + "um valor para a heurística no arquivo "
 //                        + "Agent.java:107, mas o professor resolveu explodir "
