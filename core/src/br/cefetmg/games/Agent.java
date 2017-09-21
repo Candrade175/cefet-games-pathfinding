@@ -109,7 +109,12 @@ public class Agent {
             @Override 
             public float estimate(TileNode n, TileNode n1) { 
                 //return 0; //Exercício 1
-                return n.getPosition().dst(n1.getPosition())/LevelManager.tileWidth; //Exercício 2
+                //return n.getPosition().dst(n1.getPosition())/LevelManager.tileWidth; //Exercício 2
+                
+                //Exercício 3
+                if(n.isWater()) //Se o nó Tile atual estiver em água, considera-se o peso de água
+                    return 9*n.getPosition().dst(n1.getPosition())/LevelManager.tileWidth;
+                return n.getPosition().dst(n1.getPosition())/LevelManager.tileWidth;
 //                throw new UnsupportedOperationException("Deveria ter retornado "
 //                        + "um valor para a heurística no arquivo "
 //                        + "Agent.java:107, mas o professor resolveu explodir "
